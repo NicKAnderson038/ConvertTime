@@ -4,11 +4,12 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "deploy": "npx sls deploy --stage dev --region us-east-1 --verbose --aws-profile default"
   },
   "devDependencies": {
     "aws-sdk": "^2.382.0",
+    "jest": "^23.6.0",
     "serverless-plugin-include-dependencies": "^3.2.1"
   }
 }
