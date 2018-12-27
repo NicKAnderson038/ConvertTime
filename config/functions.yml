@@ -1,0 +1,9 @@
+convertTime:
+  handler: handler.convertTime
+  events:
+    - http:
+        path: convert-time-api
+        method: POST
+        integration: lambda-proxy
+        cors: true
+        private: true

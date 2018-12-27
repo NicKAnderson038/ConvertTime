@@ -1,0 +1,31 @@
+
+service: ${self:custom.config.service-name} 
+
+plugins:
+  - serverless-plugin-include-dependencies
+
+custom:
+  region: ${opt:region, self:provider.region}
+  myStage: ${opt:stage, self:provider.stage}
+  config: ${file(./config/serviceConfig.yml)}
+  myProfile:
+    dev: default
+    staging: default
+    prod: default
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  apiKeys:
+    - sls-apikeys-covert-time
+  usagePlan:
+    quota:
+      limit: 500
+      offset: 0
+      period: DAY
+    throttle:
+      burstLimit: 500
+      rateLimit: 500
+
+
+functions: ${file(./config/functions.yml)}
