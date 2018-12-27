@@ -1,16 +1,16 @@
 const calc = require('../components/convertTimeFunction')
 
-describe(`Calculation tester`, () => {
+describe(`Time Converter Calculation Tester`, () => {
 
-    test(`The calc exists`, () => {
+    test(`The time calc function exists`, () => {
       expect(calc.convertTimeFunction).toBeTruthy();
     });
 
-    test('calc to convert to 24 PM time', () => {
+    test('time calc convert to 24 PM', () => {
         expect(calc.convertTimeFunction('01:45:15PM')).toBe("13:45:15");
     });
       
-    test('calc to convert to 24 AM time', () => {
+    test('time calc convert to 24 AM', () => {
         expect(calc.convertTimeFunction('07:45:15AM')).toBe("07:45:15");
     });
 
